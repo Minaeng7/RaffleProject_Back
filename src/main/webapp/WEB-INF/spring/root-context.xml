@@ -34,6 +34,7 @@
 			<list>
 				<value>classpath:com/config/ListMapper.xml</value>
 				<value>classpath:com/config/MemberMapper.xml</value>
+				<value>classpath:com/config/RaffleMapper.xml</value>
 			</list>
 		</property>
 		<property name="typeAliases">
@@ -41,6 +42,7 @@
 				<value>com.dto.RListDTO</value>
 				<value>com.dto.SListDTO</value>
 				<value>com.dto.ResellRDTO</value>
+				<value>com.dto.SellRDTO</value>
 				<value>com.dto.MemberDTO</value>
 			</list>
 		</property>

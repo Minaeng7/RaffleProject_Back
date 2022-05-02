@@ -17,4 +17,14 @@
 		,#{nickname},#{username},#{post},
 		#{addr1},#{addr2})
 	</insert>
+	
+	<insert id="addResell_r" parameterType="RListDTO">
+	 	insert into resell_r (resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price)
+	 	values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price})
+ 	</insert>
+ 	
+ 	<insert id="addSell_r" parameterType="SListDTO">
+	 	insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, duration, text)
+	 	values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{duration}, #{text})
+ 	</insert>
 </mapper>

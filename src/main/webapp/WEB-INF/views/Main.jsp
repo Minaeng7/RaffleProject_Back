@@ -10,9 +10,11 @@
 </c:if>
 </head>
 <body>
+
 <h1>이거사줘</h1>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
 <jsp:include page="common/menu.jsp" flush="true"></jsp:include>
-<hr>
+<a href="AddProduct">상품등록</a>
+
 </body>
-</html>/html>
+</html>
