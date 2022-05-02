@@ -4,16 +4,16 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.dto.RListDTO;
+import com.dto.SListDTO;
 
 @Repository
-public class RListDAO {
+public class SListDAO {
 
 	@Autowired
 	SqlSessionTemplate session;
 
-	public void registinglist(RListDTO dto) {
-		session.insert("ListMapper.Rregistringlist", dto);
+	public void registinglist(SListDTO dto) {
+		session.insert("ListMapper.Sregistringlist", dto);
 		
 	}
 }
