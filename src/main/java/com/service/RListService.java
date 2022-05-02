@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,10 @@ public class RListService {
 	public void registinglist(RListDTO dto) {
 		dao.registinglist(dto);
 		
+	}
+
+	public List<RListDTO> shuffle(String raffleno) {
+		List<RListDTO> list = dao.shuffle(raffleno);
+		return list;
 	}
 }

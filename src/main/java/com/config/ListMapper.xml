@@ -5,26 +5,48 @@
 <mapper namespace="ListMapper">
 
 	<insert id="Rregistringlist" parameterType="RListDTO">
-		insert into RList(Resell_rno, memberno, Rafflename, nickname, username, post, addr1, addr2, phone, spot)
-		values ( #{Raffleno}, #{memberno},#{Rafflename}
+		insert into
+		RList(Resell_rno, memberno, Rafflename, nickname, username, post,
+		addr1, addr2, phone, spot)
+		values ( #{Raffleno},
+		#{memberno},#{Rafflename}
 		,#{nickname},#{username},#{post},
 		#{addr1},#{addr2},
 		#{phone}, #{spot})
 	</insert>
 	<insert id="Sregistringlist" parameterType="SListDTO">
-		insert into RList(Sell_rno, memberno, Rafflename, nickname, username, post, addr1, addr2, phone)
+		insert into
+		RList(Sell_rno, memberno, Rafflename, nickname, username, post, addr1,
+		addr2, phone)
 		values ( #{Raffleno}, #{memberno},#{Rafflename}
 		,#{nickname},#{username},#{post},
 		#{addr1},#{addr2})
 	</insert>
-	
+
 	<insert id="addResell_r" parameterType="RListDTO">
-	 	insert into resell_r (resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price)
-	 	values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price})
- 	</insert>
- 	
- 	<insert id="addSell_r" parameterType="SListDTO">
-	 	insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, duration, text)
-	 	values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{duration}, #{text})
- 	</insert>
+		insert into resell_r (resell_rno, memberno, nickname, rafflename,
+		attend_amount, per_price, text, total_price)
+		values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename},
+		#{attend_amount}, #{per_price}, #{text}, #{total_price})
+	</insert>
+
+	<insert id="addSell_r" parameterType="SListDTO">
+		insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice,
+		raffleamount, duration, text)
+		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
+		#{raffleprice}, #{raffleamount}, #{duration}, #{text})
+	</insert>
+
+	<select id="RShuffle" parameterType="String"
+		resultType="RListDTO">
+		select *
+		from rlist
+		where resell_rno = #{raffleno}
+	</select>
+	<select id="SShuffle" parameterType="String"
+		resultType="SListDTO">
+		select *
+		from slist
+		where sell_rno = #{raffleno}
+	</select>
 </mapper>

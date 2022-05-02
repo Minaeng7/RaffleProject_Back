@@ -1,5 +1,7 @@
 package com.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,5 +17,10 @@ public class RListDAO {
 	public void registinglist(RListDTO dto) {
 		session.insert("ListMapper.Rregistringlist", dto);
 		
+	}
+
+	public List<RListDTO> shuffle(String raffleno) {
+		List<RListDTO> list = session.selectList("ListMapper.RShuffle",raffleno);
+		return list;
 	}
 }
