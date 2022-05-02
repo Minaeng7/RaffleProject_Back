@@ -41,6 +41,7 @@
 				<value>com.dto.RListDTO</value>
 				<value>com.dto.SListDTO</value>
 				<value>com.dto.ResellRDTO</value>
+				<value>com.dto.MemberDTO</value>
 			</list>
 		</property>
 	</bean>

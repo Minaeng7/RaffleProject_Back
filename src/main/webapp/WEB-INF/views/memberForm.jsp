@@ -5,14 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<c:if test="${not empty success }">
-	<script>alert("${success}")</script>
-</c:if>
 </head>
 <body>
-<h1>이거사줘</h1>
+<h1>회원가입</h1>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
 <jsp:include page="common/menu.jsp" flush="true"></jsp:include>
 <hr>
+<jsp:include page="member/memberForm.jsp"></jsp:include>
 </body>
-</html>/html>
+</html>
