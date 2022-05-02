@@ -17,16 +17,16 @@ public class AttendController {
 	SListService Sservice;
 	
 	
-	@RequestMapping("AttendingRaffle")
+	@RequestMapping("/AttendingRaffle")
 	public String AttendingRaffle() {
 		return "AttendingRaffle";
 	}
-	@RequestMapping("RAttend")
+	@RequestMapping("/RAttend")
 	public String RAttend(RListDTO dto) {
 		Rservice.registinglist(dto);
 		return null;
 	}
-	@RequestMapping("SAttend")
+	@RequestMapping("/SAttend")
 	public String SAttend(SListDTO dto) {
 		Sservice.registinglist(dto);
 		return null;

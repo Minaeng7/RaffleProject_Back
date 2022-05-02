@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.dao.ListDAO;
 import com.dto.ResellRDTO;
-import com.dto.Resell_rDTO;
 import com.dto.SellRDTO;
 
 @Service
