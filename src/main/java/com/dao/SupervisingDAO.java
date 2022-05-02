@@ -20,5 +20,11 @@ public class SupervisingDAO {
 		list= session.selectList("MemberMapper.selectMyAttendedRaffle", memberno);
 		return list;
 	}
+
+	public List<ResellRDTO> selectMyRaffle(String memberno) {
+		List <ResellRDTO> list = new ArrayList<>();
+		list = session.selectList("RaffleMapper.selectMyRaffle", memberno);
+		return list;
+	}
 	
 }

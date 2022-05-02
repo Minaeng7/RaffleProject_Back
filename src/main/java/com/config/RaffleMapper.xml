@@ -13,4 +13,20 @@
 	 	insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, duration, text)
 	 	values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{duration}, #{text})
  	</insert>
+ 		<select id="selectMyAttendedRaffle" parameterType="String"
+		resultType="ResellRDTO">
+		select *
+		from resell_R
+		where resell_rno in (
+		select resell_rno
+		from rlist
+		where memberno = #{memberno}
+		)
+	</select>
+ 	<select id="selectMyRaffle" parameterType="String"
+		resultType="ResellRDTO">
+		select *
+		from resell_R
+		where memberno = #{memberno}
+	</select>
 </mapper>

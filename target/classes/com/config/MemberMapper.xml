@@ -5,18 +5,6 @@
 <mapper namespace="MemberMapper">
 
 
-	<select id="selectMyAttendedRaffle" parameterType="String"
-		resultType="ResellRDTO">
-		select *
-		from resell_R
-		where resell_rno in (
-		select resell_rno
-		from rlist
-		where memberno = #{memberno}
-		)
-	</select>
-
-
 	<select id="login" parameterType="hashmap"
 		resultType="MemberDTO">
 		select userid,nickname,passwd,username,post,addr1,addr2,

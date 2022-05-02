@@ -20,4 +20,10 @@ public class SupervisingService {
 		list = dao.selectMyAttendedRaffle(memberno);
 		return list;
 	}
+
+	public List<ResellRDTO> selectMyRaffle(String memberno) {
+		List<ResellRDTO> list = new ArrayList<>();
+		list = dao.selectMyRaffle(memberno);
+		return list;
+	}
 }
