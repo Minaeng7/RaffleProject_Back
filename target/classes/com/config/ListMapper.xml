@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ListMapper">
+
+	<insert id="registringlist" parameterType="RListDTO">
+		insert into RList(Resell_rno, memberno, Rafflename, nickname, username, post, addr1, addr2, phone, spot)
+		values ( #{Raffleno}, #{memberno},#{Rafflename}
+		,#{nickname},#{username},#{post},
+		#{addr1},#{addr2},
+		#{phone}, #{spot})
+	</insert>
+</mapper>
