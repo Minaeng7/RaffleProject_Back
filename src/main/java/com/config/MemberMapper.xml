@@ -4,13 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MemberMapper">
 
-<select id="selectMyAttendedRaffle" parameterType = "String" resultType = "ResellRDTO">
-select *
-from resell_R
-where resell_rno in (
-					select resell_rno
-					from rlist
-					where memberno = #{memberno}
-					)
-</select>
+	<select id="selectMyAttendedRaffle" parameterType = "String" resultType = "ResellRDTO">
+	select *
+	from resell_R
+	where resell_rno in (
+						select resell_rno
+						from rlist
+						where memberno = #{memberno}
+						)
+	</select>
+	
+	<select id="login" parameterType="hashmap" resultType="MemberDTO">
+	  select *
+      from member
+      where userid = #{userid} and passwd = #{passwd}
+	</select> 
+	
 </mapper>

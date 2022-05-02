@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- main page 구현 -->
-<a href="AddProduct">상품등록</a>
+AddProduct.jsp<br>
+${login}
+<hr>
+<input type="button" onclick="location.href='AddResell'" value="Resell 상품 등록"/>
+<input type="button" onclick="location.href='AddSell'" value="Sell 상품 등록"/>
+
 </body>
 </html>
