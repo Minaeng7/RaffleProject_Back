@@ -6,11 +6,29 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//이미지 파일 미리보기
+	$("#imgUpload").on("change", function() {
+		readURL(this);
+	})
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$("#View").attr("src", e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+	
+});
+</script>
 </head>
 <body>
 <h1> SELL 상품 등록</h1>
 ${login }
-<form action="SellRetrieve" method="get">
+<form action="SellRetrieve" method="get" enctype="multipart/form-data">
 <input type="hidden" name="memberno" value="${login.memberno }">
 <input type="hidden" name="nickname" value="${login.nickname }">
 회원 번호 : <input type="text" name="" value=""><br>
@@ -23,8 +41,9 @@ ${login }
 
 <br>
 제품 설명 : <input type="text" name="text" value="" placeholder="게시글 내용을 작성해주세요."><br>
-이미지 등록 : <input type="file" name="img" value="">
-
+이미지 등록 : <input type="file" id="imgUpload" name="img" value="" required="required" accept=".jpg, .jpeg, .png"><br>
+		 <img id="View" src="#" alt="이미지 미리보기">
+	
 <hr>
 <button>상품등록</button>
 </form>

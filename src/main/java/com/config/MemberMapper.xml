@@ -7,8 +7,7 @@
 
 	<select id="login" parameterType="hashmap"
 		resultType="MemberDTO">
-		select userid,nickname,passwd,username,post,addr1,addr2,
-		phone,email1,email2
+		select *
 		from member
 		where userid =#{userid} and passwd=#{passwd}
 	</select>
