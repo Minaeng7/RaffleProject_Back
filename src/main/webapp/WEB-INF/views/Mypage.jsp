@@ -10,7 +10,7 @@
 <h1>MyPage</h1>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
 <jsp:include page="common/menu.jsp" flush="true"></jsp:include><BR>
-<jsp:include page="Mypage/Mypage.jsp" flush="true"></jsp:include>
-<jsp:include page="MyRaffle/MyAttendedRaffle.jsp" flush="true"></jsp:include>
+<hr>
+<jsp:include page="Mypage/Mypage.jsp" flush="true"></jsp:include><BR>
 </body>
 </html>
