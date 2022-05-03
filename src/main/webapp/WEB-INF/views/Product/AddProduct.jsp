@@ -5,10 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
-<jsp:include page="common/top.jsp" flush="true"></jsp:include><br>
-<jsp:include page="common/menu.jsp" flush="true"></jsp:include><br>
-<jsp:include page="Product/AddProduct.jsp"></jsp:include>
+AddProduct.jsp<br>
+${login}
+<hr>
+
+<a href="AddResell">Resell 상품 등록</a>
+<a href="AddSell">Sell 상품 등록</a>
+
 </body>
 </html>

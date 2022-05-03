@@ -22,21 +22,6 @@
 		,#{nickname},#{username},#{post},
 		#{addr1},#{addr2})
 	</insert>
-
-	<insert id="addResell_r" parameterType="ResellRDTO">
-		insert into resell_r (resell_rno, memberno, nickname, rafflename,
-		attend_amount, per_price, text, total_price, deadline, img)
-		values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename},
-		#{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{img})
-	</insert>
-
-	<insert id="addSell_r" parameterType="SellRDTO">
-		insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice,
-		raffleamount, img, text, deadline)
-		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
-		#{raffleprice}, #{raffleamount}, #{img}, #{text}, #{deadline})
-	</insert>
-
 	<select id="RShuffle" parameterType="int"
 		resultType="RListDTO">
 		select *

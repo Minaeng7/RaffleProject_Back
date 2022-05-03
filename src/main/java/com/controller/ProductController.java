@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
@@ -19,27 +20,29 @@ public class ProductController {
 	ListService service;
 	
 	@RequestMapping(value="/loginCheck/AddProduct")
-	public String AddProduct(@RequestParam Map<String, String> map, HttpSession session) {//model (메세지 전달하려고 사용), session(로그인 정보 저장)
+	public String AddProduct(@RequestParam Map<String, String> map, HttpSession session) {
 		return "redirect:../AddProduct";
 	}
 	
-	//resell상품등록
-	@RequestMapping("/ResellRetrieve")
-	public String AddResell(ResellRDTO rdto, HttpSession session) {
-		service.addResell_r(rdto);
-		System.out.println(rdto);
-		session.setAttribute("rdto", rdto);
-		return "ResellRetrieve";
-	}
-		
-	//sell상품등록
-	@RequestMapping("/SellRetrieve")
-	public String AddSell(SellRDTO sdto, HttpSession session) {
+	@RequestMapping(value="/loginCheck/SellRetrieve")
+	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {
 		service.addSell_r(sdto);
 		System.out.println(sdto);
-		session.setAttribute("sdto", sdto);
-		return "SellRetrieve";
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("sdto", sdto);
+		mav.setViewName("Product/SellRetrieve");
+		return mav;
 	}
 	
-	
+	@RequestMapping(value="/loginCheck/ResellRetrieve")
+	public ModelAndView AddResell(ResellRDTO rdto, HttpSession session) {
+		service.addResell_r(rdto);
+		System.out.println(rdto);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("rdto", rdto);
+		mav.setViewName("Product/ResellRetrieve");
+		return mav;
+	}
+
+
 }

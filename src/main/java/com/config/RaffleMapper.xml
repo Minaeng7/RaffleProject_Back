@@ -4,15 +4,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="RaffleMapper">
 
+	
 	<insert id="addResell_r" parameterType="ResellRDTO">
-	 	insert into resell_r (resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price)
-	 	values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price})
- 	</insert>
- 	
- 	<insert id="addSell_r" parameterType="SellRDTO">
-	 	insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, duration, text)
-	 	values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{duration}, #{text})
- 	</insert>
+		insert into resell_r (resell_rno, memberno, nickname, rafflename,
+		attend_amount, per_price, text, total_price, deadline, img)
+		values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename},
+		#{attendamount}, #{perprice}, #{text}, #{totalprice}, #{deadline}, #{img})
+	</insert>
+
+	<insert id="addSell_r" parameterType="SellRDTO">
+		insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice,
+		raffleamount, img, text, deadline)
+		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
+		#{raffleprice}, #{raffleamount}, #{img}, #{text}, #{deadline})
+	</insert>
+
  		<select id="selectMyAttendedRaffleR" parameterType="String"
 		resultType="ResellRDTO">
 		select *
