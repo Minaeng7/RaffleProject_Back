@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.SupervisingDAO;
 import com.dto.ResellRDTO;
+import com.dto.SellRDTO;
 
 @Service
 public class SupervisingService {
@@ -15,15 +16,27 @@ public class SupervisingService {
 	@Autowired
 	SupervisingDAO dao;
 
-	public List<ResellRDTO> selectMyAttendedRaffle(String memberno) {
+	public List<ResellRDTO> selectMyAttendedRaffleR(String memberno) {
 		List<ResellRDTO> list = new ArrayList<>();
-		list = dao.selectMyAttendedRaffle(memberno);
+		list = dao.selectMyAttendedRaffleR(memberno);
 		return list;
 	}
 
-	public List<ResellRDTO> selectMyRaffle(String memberno) {
+	public List<ResellRDTO> selectMyRaffleR(String memberno) {
 		List<ResellRDTO> list = new ArrayList<>();
-		list = dao.selectMyRaffle(memberno);
+		list = dao.selectMyRaffleR(memberno);
+		return list;
+	}
+
+	public List<SellRDTO> selectMyAttendedRaffleS(String memberno) {
+		List<SellRDTO> list = new ArrayList<>();
+		list = dao.selectMyAttendedRaffleS(memberno);
+		return list;
+	}
+
+	public List<SellRDTO> selectMyRaffleS(String memberno) {
+		List<SellRDTO> list = new ArrayList<>();
+		list = dao.selectMyRaffleS(memberno);
 		return list;
 	}
 }
