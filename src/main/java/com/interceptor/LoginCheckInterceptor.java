@@ -14,7 +14,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 
 		System.out.println("LoginCheckInterceptor>>>");
-		HttpSession session = request.getSession();//세션에서 로그인 정보 가져오기
+		HttpSession session = request.getSession();
 		if (session.getAttribute("login") == null) {
 			response.sendRedirect("../loginForm");
 			return false;
