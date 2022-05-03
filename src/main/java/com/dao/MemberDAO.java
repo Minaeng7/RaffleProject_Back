@@ -11,6 +11,7 @@ import com.dto.MemberDTO;
 public class MemberDAO {
 	@Autowired
 	SqlSessionTemplate template;//자동주입
+	
 	public void memberAdd(MemberDTO m) {
 		System.out.println("DAOOOOO");
 		int n = template.insert("MemberMapper.memberAdd", m);
@@ -18,6 +19,10 @@ public class MemberDAO {
 	}
 	public MemberDTO login(Map<String, String> map) {
 		MemberDTO dto = template.selectOne("MemberMapper.login", map);
+		return dto;
+	}
+	public MemberDTO Mypage(int memberno) {
+		MemberDTO dto = template.selectOne("MemberMapper.Mypage", memberno);
 		return dto;
 	}
 

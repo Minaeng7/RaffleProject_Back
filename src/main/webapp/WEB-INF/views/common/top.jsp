@@ -9,5 +9,5 @@
 <c:if test="${!empty login }">
 안녕하세요? ${login.username } 님 !<br>
 	<a href="loginCheck/logout">로그아웃</a>&nbsp;
-	<a href="">장바구니</a>&nbsp;
+	<a href="Mypage">MyPage</a>&nbsp;
 </c:if>

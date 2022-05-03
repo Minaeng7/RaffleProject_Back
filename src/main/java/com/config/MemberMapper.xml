@@ -7,8 +7,8 @@
 
 	<select id="login" parameterType="hashmap"
 		resultType="MemberDTO">
-		select userid,nickname,passwd,username,post,addr1,addr2,
-		phone,email1,email2
+		select memberno, userid,nickname,passwd,username,post,addr1,addr2,
+		phone,birth, email1,email2
 		from member
 		where userid =#{userid} and passwd=#{passwd}
 	</select>
@@ -19,6 +19,11 @@
 		values( #{memberno},#{userid},#{passwd},#{username},#{nickname},#{post},
 		#{addr1},#{addr2},#{phone},#{birth},#{email1},#{email2})
 	</insert>
+	<select id="Mypage" parameterType = "int" resultType = "MemberDTO">
+	select *
+	from member
+	where memberno = #{memberno}
+	</select>
 <!-- 
 	<select id="login" parameterType="hashmap" resultType="MemberDTO">
 	  select *

@@ -4,7 +4,7 @@ import org.apache.ibatis.type.Alias;
 
 @Alias("MemberDTO")
 public class MemberDTO {
-	private String memberno;
+	private int memberno;
 	private String userid;
 	private String passwd;
 	private String username;
@@ -20,7 +20,7 @@ public class MemberDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberDTO(String memberno, String userid, String passwd, String username, String nickname, String post,
+	public MemberDTO(int memberno, String userid, String passwd, String username, String nickname, String post,
 			String addr1, String addr2, String phone, String birth, String email1, String email2) {
 		super();
 		this.memberno = memberno;
@@ -42,10 +42,10 @@ public class MemberDTO {
 				+ username + ", nickname=" + nickname + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
 				+ ", phone=" + phone + ", birth=" + birth + ", email1=" + email1 + ", email2=" + email2 + "]";
 	}
-	public String getMemberno() {
+	public int getMemberno() {
 		return memberno;
 	}
-	public void setMemberno(String memberno) {
+	public void setMemberno(int memberno) {
 		this.memberno = memberno;
 	}
 	public String getUserid() {

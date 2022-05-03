@@ -1,7 +1,9 @@
 package com.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,13 +20,18 @@ public class SupervisingController {
 	@Autowired
 	SupervisingService service;
 	
-	@RequestMapping("/MyAttendedRaffleR")
-	public ModelAndView MyAttendedRaffleR(String memberno) {
-		List<ResellRDTO> list = new ArrayList<>();
-		list = service.selectMyAttendedRaffleR(memberno);
+	@RequestMapping("/MyAttendedRaffle")
+	public ModelAndView MyAttendedRaffle(String memberno) {
+		List<ResellRDTO> listR = new ArrayList<>();
+		listR = service.selectMyAttendedRaffleR(memberno);
+		List<SellRDTO> listS = new ArrayList<>();
+		listS = service.selectMyAttendedRaffleS(memberno);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("AttendedRaffle", list);
-		mav.setViewName("");
+		Map<String,List>map = new HashMap<>();
+		map.put("AttendedRaffleR", listR);
+		map.put("AttendedRaffleS", listS);
+		mav.addAllObjects(map);
+		mav.setViewName("MyAttendedRaffle");
 		return mav;
 	}
 	@RequestMapping("/MyRaffleR")
@@ -33,15 +40,6 @@ public class SupervisingController {
 		list = service.selectMyRaffleR(memberno);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("MyRaffle", list);
-		mav.setViewName("");
-		return mav;
-	}
-	@RequestMapping("/MyAttendedRaffleS")
-	public ModelAndView MyAttendedRaffleS(String memberno) {
-		List<SellRDTO> list = new ArrayList<>();
-		list = service.selectMyAttendedRaffleS(memberno);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("AttendedRaffle", list);
 		mav.setViewName("");
 		return mav;
 	}

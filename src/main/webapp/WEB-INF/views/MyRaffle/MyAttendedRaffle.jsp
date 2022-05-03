@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 내가 참여하고 있는 래플 상품 -->
+<h1>Seller Raffle</h1>
+${AttendedRaffle}
+
 </body>
 </html>

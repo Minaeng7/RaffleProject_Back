@@ -13,6 +13,7 @@ import com.dto.MemberDTO;
 public class MemberSerivce {
 	@Autowired
 	MemberDAO dao;
+	
 	public void memberAdd(MemberDTO m) {
 		//System.out.println("service");
 		dao.memberAdd(m);
@@ -20,6 +21,11 @@ public class MemberSerivce {
 
 	public MemberDTO login(Map<String, String> map) {
 		MemberDTO dto = dao.login(map); 
+		return dto;
+	}
+
+	public MemberDTO Mypage(int memberno) {
+		MemberDTO dto = dao.Mypage(memberno);
 		return dto;
 	}
 
