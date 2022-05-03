@@ -10,7 +10,7 @@
 <h1>Attending Raffle</h1>
 <form action ="Attend">
 <input type = "hidden" id = "raffleno" name = "Raffleno" value = "1">
-<input type = "hidden" id = "memberno" name = "memberno"value = "1">
+<input type = "hidden" id = "memberno" name = "memberno" value = "1"><!-- 참여하는 member의 number -->
 <input type = "hidden" id = "Rafflename" name = "Rafflename" value = "NIKE-limited">
 참여자 성함 : <input type = "text" id = "Ausername" name = "username"><br>
 참여자 닉네임 : <input type = "text" id = "Anickname" name = "nickname"><br>

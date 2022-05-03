@@ -1,5 +1,8 @@
 package com.dto;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("ResellRDTO")
 public class ResellRDTO {
 
 	String Raffleno;

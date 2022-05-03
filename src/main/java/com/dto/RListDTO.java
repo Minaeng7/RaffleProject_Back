@@ -1,5 +1,8 @@
 package com.dto;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("RListDTO")
 public class RListDTO {
 
 	String Raffleno;
