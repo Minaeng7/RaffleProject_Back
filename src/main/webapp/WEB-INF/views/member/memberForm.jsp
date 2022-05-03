@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <form action="memberAdd" method="get">
-<input type = "hidden" name = "memberno" value = "1">
+<input type = "hidden" name = "memberno" value = "">
 아이디:<input type="text" name="userid" id="userid">
 <span id="result"></span>
 <br> 

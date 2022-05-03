@@ -44,6 +44,8 @@
 				<value>com.dto.ResellRDTO</value>
 				<value>com.dto.SellRDTO</value>
 				<value>com.dto.MemberDTO</value>
+				<value>com.dto.SwinDTO</value>
+				<value>com.dto.RwinDTO</value>
 			</list>
 		</property>
 	</bean>

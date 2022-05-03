@@ -22,8 +22,8 @@ public class RandomController {
 	SListService sservice;
 	
 	@RequestMapping("/RShuffle")
-	public ModelAndView RShuffle(String Raffleno) {
-		List<RListDTO>list = rservice.shuffle(Raffleno);
+	public ModelAndView RShuffle(int resell_rno) {
+		List<RListDTO>list = rservice.shuffle(resell_rno);
 		Collections.shuffle(list);
 		RListDTO dto = list.get(0);
 		ModelAndView mav = new ModelAndView();
@@ -32,8 +32,8 @@ public class RandomController {
 		return mav;
 	}
 	@RequestMapping("/SShuffle")
-	public ModelAndView SShuffle(String Raffleno) {
-		List<SListDTO>list = sservice.shuffle(Raffleno);
+	public ModelAndView SShuffle(int sell_rno) {
+		List<SListDTO>list = sservice.shuffle(sell_rno);
 		Collections.shuffle(list);
 		SListDTO dto = list.get(0);
 		ModelAndView mav = new ModelAndView();

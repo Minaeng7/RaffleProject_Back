@@ -36,6 +36,12 @@ public class MemberDTO {
 		this.email1 = email1;
 		this.email2 = email2;
 	}
+	@Override
+	public String toString() {
+		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
+				+ username + ", nickname=" + nickname + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
+				+ ", phone=" + phone + ", birth=" + birth + ", email1=" + email1 + ", email2=" + email2 + "]";
+	}
 	public String getMemberno() {
 		return memberno;
 	}
@@ -107,12 +113,6 @@ public class MemberDTO {
 	}
 	public void setEmail2(String email2) {
 		this.email2 = email2;
-	}
-	@Override
-	public String toString() {
-		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
-				+ username + ", nickname=" + nickname + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
-				+ ", phone=" + phone + ", birth=" + birth + ", email1=" + email1 + ", email2=" + email2 + "]";
 	}
 	
 }

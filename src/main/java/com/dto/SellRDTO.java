@@ -1,21 +1,25 @@
 package com.dto;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("SellRDTO")
 public class SellRDTO {
 	
-	String sell_rno;
+	int sell_rno;
 	String memberno;
 	String nickname;
 	String rafflename;
-	String  raffleprice;
+	String raffleprice;
 	String raffleamount;
-	String duration;
 	String text;
+	String deadline;
+	String img;
 	public SellRDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SellRDTO(String sell_rno, String memberno, String nickname, String rafflename, String raffleprice,
-			String raffleamount, String duration, String text) {
+	public SellRDTO(int sell_rno, String memberno, String nickname, String rafflename, String raffleprice,
+			String raffleamount, String text, String deadline, String img) {
 		super();
 		this.sell_rno = sell_rno;
 		this.memberno = memberno;
@@ -23,19 +27,20 @@ public class SellRDTO {
 		this.rafflename = rafflename;
 		this.raffleprice = raffleprice;
 		this.raffleamount = raffleamount;
-		this.duration = duration;
 		this.text = text;
+		this.deadline = deadline;
+		this.img = img;
 	}
 	@Override
 	public String toString() {
-		return "Sell_rDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", nickname=" + nickname + ", rafflename="
-				+ rafflename + ", raffleprice=" + raffleprice + ", raffleamount=" + raffleamount + ", duration="
-				+ duration + ", text=" + text + "]";
+		return "SellRDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", nickname=" + nickname + ", rafflename="
+				+ rafflename + ", raffleprice=" + raffleprice + ", raffleamount=" + raffleamount + ", text=" + text
+				+ ", deadline=" + deadline + ", img=" + img + "]";
 	}
-	public String getSell_rno() {
+	public int getSell_rno() {
 		return sell_rno;
 	}
-	public void setSell_rno(String sell_rno) {
+	public void setSell_rno(int sell_rno) {
 		this.sell_rno = sell_rno;
 	}
 	public String getMemberno() {
@@ -68,18 +73,23 @@ public class SellRDTO {
 	public void setRaffleamount(String raffleamount) {
 		this.raffleamount = raffleamount;
 	}
-	public String getDuration() {
-		return duration;
-	}
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
 	public String getText() {
 		return text;
 	}
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+	public String getDeadline() {
+		return deadline;
+	}
+	public void setDeadline(String deadline) {
+		this.deadline = deadline;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	
 }

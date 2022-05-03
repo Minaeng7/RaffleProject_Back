@@ -20,8 +20,8 @@ public class SListDAO {
 		
 	}
 
-	public List<SListDTO> shuffle(String raffleno) {
-		List<SListDTO> list = session.selectList("ListMapper.SShuffle",raffleno);
+	public List<SListDTO> shuffle(int sell_rno) {
+		List<SListDTO> list = session.selectList("ListMapper.SShuffle",sell_rno);
 		return list;
 	}
 }

@@ -19,8 +19,8 @@ public class RListDAO {
 		
 	}
 
-	public List<RListDTO> shuffle(String raffleno) {
-		List<RListDTO> list = session.selectList("ListMapper.RShuffle",raffleno);
+	public List<RListDTO> shuffle(int resell_rno) {
+		List<RListDTO> list = session.selectList("ListMapper.RShuffle",resell_rno);
 		return list;
 	}
 }

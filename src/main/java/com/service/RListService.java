@@ -19,8 +19,8 @@ public class RListService {
 		
 	}
 
-	public List<RListDTO> shuffle(String raffleno) {
-		List<RListDTO> list = dao.shuffle(raffleno);
+	public List<RListDTO> shuffle(int resell_rno) {
+		List<RListDTO> list = dao.shuffle(resell_rno);
 		return list;
 	}
 }
