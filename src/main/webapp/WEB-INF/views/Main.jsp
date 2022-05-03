@@ -16,7 +16,7 @@
 <h1>이거사줘</h1>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
 <jsp:include page="common/menu.jsp" flush="true"></jsp:include>
-<a href="AddProduct">상품등록</a>
+<a href="loginCheck/AddProduct">상품등록</a>
 
 </body>
 </html>

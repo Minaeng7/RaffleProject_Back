@@ -19,8 +19,9 @@ ${login }
 상품(래플)이름 : <input type="text" name="rafflename" value="" placeholder="상품이름을 입력하세요"><br>
 가격 : <input type="text" id="raffleprice" name="raffleprice" value="">원<br>
 수량 : <input type="text" id="raffleamount" name="raffleamount" value="" placeholder="수량"><br>
-래플 진행 기간 : <input type="text" id="duration" name="duration" value="" placeholder="래플진행기간"><br>
-제품 설명 : <input type="text" name="text" value="" placeholder="게시글 내용을 작성해주세요.">
+래플 진행 기간 : <input type="text" id="deadline" name="deadline" value="" placeholder="래플진행기간"><br>
+제품 설명 : <input type="text" name="text" value="" placeholder="게시글 내용을 작성해주세요."><br>
+이미지 등록 : <input type="file" name="img" value="">
 <hr>
 <button>상품등록</button>
 </form>

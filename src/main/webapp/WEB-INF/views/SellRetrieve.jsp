@@ -48,7 +48,12 @@ ${sdto }
 	
 	<tr>
 		<th>기간</th>
-		<td><span>${sdto.duration }</span></td>
+		<td><span>${sdto.deadline }</span></td>
+	</tr>
+	
+	<tr>
+		<th>제품 사진</th>
+		<td><span>${sdto.img }</span></td>
 	</tr>
 	
 </table>

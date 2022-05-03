@@ -2,28 +2,24 @@ package com.dto;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("SListDTO")
-public class SListDTO {
-
+@Alias("SwinDTO")
+public class SwinDTO {
+	
 	int sell_rno;
-	String memberno;
-	String Rafflename;
 	String nickname;
 	String username;
 	String post;
 	String addr1;
 	String addr2;
 	String phone;
-	public SListDTO() {
+	public SwinDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SListDTO(int sell_rno, String memberno, String rafflename, String nickname, String username, String post,
-			String addr1, String addr2, String phone) {
+	public SwinDTO(int sell_rno, String nickname, String username, String post, String addr1, String addr2,
+			String phone) {
 		super();
 		this.sell_rno = sell_rno;
-		this.memberno = memberno;
-		Rafflename = rafflename;
 		this.nickname = nickname;
 		this.username = username;
 		this.post = post;
@@ -33,27 +29,14 @@ public class SListDTO {
 	}
 	@Override
 	public String toString() {
-		return "SListDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", Rafflename=" + Rafflename
-				+ ", nickname=" + nickname + ", username=" + username + ", post=" + post + ", addr1=" + addr1
-				+ ", addr2=" + addr2 + ", phone=" + phone + "]";
+		return "SwinDTO [sell_rno=" + sell_rno + ", nickname=" + nickname + ", username=" + username + ", post=" + post
+				+ ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + "]";
 	}
 	public int getSell_rno() {
 		return sell_rno;
 	}
 	public void setSell_rno(int sell_rno) {
 		this.sell_rno = sell_rno;
-	}
-	public String getMemberno() {
-		return memberno;
-	}
-	public void setMemberno(String memberno) {
-		this.memberno = memberno;
-	}
-	public String getRafflename() {
-		return Rafflename;
-	}
-	public void setRafflename(String rafflename) {
-		Rafflename = rafflename;
 	}
 	public String getNickname() {
 		return nickname;
@@ -91,5 +74,5 @@ public class SListDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
 }

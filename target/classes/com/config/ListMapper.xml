@@ -6,47 +6,47 @@
 
 	<insert id="Rregistringlist" parameterType="RListDTO">
 		insert into
-		RList(Resell_rno, memberno, Rafflename, nickname, username, post,
+		RList(resell_rno, memberno, rafflename, nickname, username, post,
 		addr1, addr2, phone, spot)
-		values ( #{Raffleno},
-		#{memberno},#{Rafflename}
+		values ( #{resell_rno},
+		#{memberno},#{rafflename}
 		,#{nickname},#{username},#{post},
 		#{addr1},#{addr2},
 		#{phone}, #{spot})
 	</insert>
 	<insert id="Sregistringlist" parameterType="SListDTO">
 		insert into
-		RList(Sell_rno, memberno, Rafflename, nickname, username, post, addr1,
+		RList(sell_rno, memberno, rafflename, nickname, username, post, addr1,
 		addr2, phone)
-		values ( #{Raffleno}, #{memberno},#{Rafflename}
+		values ( #{sell_rno}, #{memberno},#{rafflename}
 		,#{nickname},#{username},#{post},
 		#{addr1},#{addr2})
 	</insert>
 
-	<insert id="addResell_r" parameterType="RListDTO">
+	<insert id="addResell_r" parameterType="ResellRDTO">
 		insert into resell_r (resell_rno, memberno, nickname, rafflename,
-		attend_amount, per_price, text, total_price)
+		attend_amount, per_price, text, total_price, deadline, img)
 		values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename},
-		#{attend_amount}, #{per_price}, #{text}, #{total_price})
+		#{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{img})
 	</insert>
 
-	<insert id="addSell_r" parameterType="SListDTO">
+	<insert id="addSell_r" parameterType="SellRDTO">
 		insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice,
-		raffleamount, duration, text)
+		raffleamount, img, text, deadline)
 		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
-		#{raffleprice}, #{raffleamount}, #{duration}, #{text})
+		#{raffleprice}, #{raffleamount}, #{img}, #{text}, #{deadline})
 	</insert>
 
-	<select id="RShuffle" parameterType="String"
+	<select id="RShuffle" parameterType="int"
 		resultType="RListDTO">
 		select *
 		from rlist
-		where resell_rno = #{raffleno}
+		where resell_rno = #{resell_rno}
 	</select>
-	<select id="SShuffle" parameterType="String"
+	<select id="SShuffle" parameterType="int"
 		resultType="SListDTO">
 		select *
 		from slist
-		where sell_rno = #{raffleno}
+		where sell_rno = #{sell_rno}
 	</select>
 </mapper>

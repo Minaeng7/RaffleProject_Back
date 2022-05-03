@@ -20,8 +20,8 @@ public class SListService {
 		
 	}
 
-	public List<SListDTO> shuffle(String raffleno) {
-		List<SListDTO> list = dao.shuffle(raffleno);
+	public List<SListDTO> shuffle(int sell_rno) {
+		List<SListDTO> list = dao.shuffle(sell_rno);
 		return list;
 	}
 }

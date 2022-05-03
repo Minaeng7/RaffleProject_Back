@@ -2,60 +2,41 @@ package com.dto;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("RListDTO")
-public class RListDTO {
+@Alias("RwinDTO")
+public class RwinDTO {
 
 	int resell_rno;
-	String memberno;
-	String rafflename;
 	String nickname;
 	String username;
 	String post;
 	String addr1;
 	String addr2;
 	String phone;
-	int spot;
-	public RListDTO() {
+	public RwinDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public RListDTO(int resell_rno, String memberno, String rafflename, String nickname, String username, String post,
-			String addr1, String addr2, String phone, int spot) {
+	public RwinDTO(int resell_rno, String nickname, String username, String post, String addr1, String addr2,
+			String phone) {
 		super();
 		this.resell_rno = resell_rno;
-		this.memberno = memberno;
-		this.rafflename = rafflename;
 		this.nickname = nickname;
 		this.username = username;
 		this.post = post;
 		this.addr1 = addr1;
 		this.addr2 = addr2;
 		this.phone = phone;
-		this.spot = spot;
 	}
 	@Override
 	public String toString() {
-		return "RListDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", rafflename=" + rafflename
-				+ ", nickname=" + nickname + ", username=" + username + ", post=" + post + ", addr1=" + addr1
-				+ ", addr2=" + addr2 + ", phone=" + phone + ", spot=" + spot + "]";
+		return "RwinDTO [resell_rno=" + resell_rno + ", nickname=" + nickname + ", username=" + username + ", post="
+				+ post + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + "]";
 	}
 	public int getResell_rno() {
 		return resell_rno;
 	}
 	public void setResell_rno(int resell_rno) {
 		this.resell_rno = resell_rno;
-	}
-	public String getMemberno() {
-		return memberno;
-	}
-	public void setMemberno(String memberno) {
-		this.memberno = memberno;
-	}
-	public String getRafflename() {
-		return rafflename;
-	}
-	public void setRafflename(String rafflename) {
-		this.rafflename = rafflename;
 	}
 	public String getNickname() {
 		return nickname;
@@ -92,12 +73,6 @@ public class RListDTO {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public int getSpot() {
-		return spot;
-	}
-	public void setSpot(int spot) {
-		this.spot = spot;
 	}
 	
 }
