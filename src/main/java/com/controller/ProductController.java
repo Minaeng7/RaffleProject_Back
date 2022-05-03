@@ -19,7 +19,7 @@ public class ProductController {
 	ListService service;
 	
 	@RequestMapping(value="/loginCheck/AddProduct")
-	public String AddProduct(@RequestParam Map<String, String> map, HttpSession session) {//model (메세지 전달하려고 사용), session(로그인 정보 저장)
+	public String AddProduct(@RequestParam Map<String, String> map, HttpSession session) {
 		return "redirect:../AddProduct";
 	}
 	
