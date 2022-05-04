@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,10 @@ public class ListService {
 
 	public void addSell_r(SellRDTO sdto) {
 		dao.addSell_r(sdto);
+	}
+
+	public List<SellRDTO> SellRList(SellRDTO sdto) {
+		return dao.SellRList(sdto);
 	}
 
 }

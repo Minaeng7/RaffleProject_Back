@@ -27,7 +27,7 @@ $(document).ready(function(){
 </head>
 <body>
 <h1> Resell 상품 등록</h1>
-${login }
+로그인 정보 : ${login }
 <form action="loginCheck/ResellRetrieve" method="get" enctype="multipart/form-data">
 	<input type="hidden" name="memberno" value="${login.memberno }">
 	<input type="hidden" name="nickname" value="${login.nickname }">

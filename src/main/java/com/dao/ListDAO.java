@@ -1,10 +1,13 @@
 package com.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.ResellRDTO;
+import com.dto.SListDTO;
 import com.dto.SellRDTO;
 
 @Repository
@@ -18,6 +21,10 @@ public class ListDAO {
 
 	public void addSell_r(SellRDTO sdto) {
 		template.insert("RaffleMapper.addSell_r", sdto);
+	}
+
+	public List<SellRDTO> SellRList(SellRDTO sdto) {
+		return template.selectList("RaffleMapper.SellRList", sdto);
 	}
 	
 }

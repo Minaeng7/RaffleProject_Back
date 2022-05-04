@@ -26,8 +26,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+Product/AddSell.jsp
 <h1> Sell 상품 등록</h1>
-${login }
+로그인 정보 : ${login }
 <form action="loginCheck/SellRetrieve" method="get" enctype="multipart/form-data">
 	<input type="hidden" name="memberno" value="${login.memberno }">
 	<input type="hidden" name="nickname" value="${login.nickname }">

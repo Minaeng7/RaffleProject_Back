@@ -5,15 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 </head>
 <body>
-AddProduct.jsp<br>
-${login}
+Product/SList.jsp<br>
 <hr>
-
-<a href="AddResell">Resell 상품 등록</a>
-<a href="AddSell">Sell 상품 등록</a>
+<a href="loginCheck/AddSell">상품등록</a>
+<hr>
+>>로그인 정보 : ${login }<br>
+>>SList : ${sdto }<br>
 
 </body>
 </html>
