@@ -4,12 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="RaffleMapper">
 
+
 		<insert id="addResell_r" parameterType="ResellRDTO">
 		insert into resell_r (resell_rno, memberno, nickname, rafflename,
 		attend_amount, per_price, text, total_price, deadline, img)
 		values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename},
 		#{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{img})
-	</insert>
+
 
 	<insert id="addSell_r" parameterType="SellRDTO">
 		insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice,
@@ -17,7 +18,7 @@
 		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
 		#{raffleprice}, #{raffleamount}, #{img}, #{text}, #{deadline})
 	</insert>
-	
+
  		<select id="selectMyAttendedRaffleR" parameterType="String"
 		resultType="ResellRDTO">
 		select *

@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<jsp:include page="common/top.jsp" flush="true"></jsp:include><br>
-<jsp:include page="common/menu.jsp" flush="true"></jsp:include><br>
-<jsp:include page="Product/AddProduct.jsp"></jsp:include>
+${rdto }
+<h1>resell 상품 상세페이지</h1>
+
 </body>
 </html>

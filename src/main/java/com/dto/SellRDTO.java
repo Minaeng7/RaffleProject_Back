@@ -6,7 +6,7 @@ import org.apache.ibatis.type.Alias;
 public class SellRDTO {
 	
 	int sell_rno;
-	String memberno;
+	int memberno;
 	String nickname;
 	String rafflename;
 	String raffleprice;
@@ -18,7 +18,7 @@ public class SellRDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SellRDTO(int sell_rno, String memberno, String nickname, String rafflename, String raffleprice,
+	public SellRDTO(int sell_rno, int memberno, String nickname, String rafflename, String raffleprice,
 			String raffleamount, String text, String deadline, String img) {
 		super();
 		this.sell_rno = sell_rno;
@@ -43,10 +43,10 @@ public class SellRDTO {
 	public void setSell_rno(int sell_rno) {
 		this.sell_rno = sell_rno;
 	}
-	public String getMemberno() {
+	public int getMemberno() {
 		return memberno;
 	}
-	public void setMemberno(String memberno) {
+	public void setMemberno(int memberno) {
 		this.memberno = memberno;
 	}
 	public String getNickname() {
