@@ -26,6 +26,11 @@ public class ProductController {
 		return "redirect:../AddSell";
 	}
 	
+	@RequestMapping(value="/loginCheck/AddReSell")
+	public String AddResellProduct() {
+		return "redirect:../AddResell";
+	}	
+	
 	@RequestMapping(value="/loginCheck/SellRetrieve")
 	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {
 		service.addSell_r(sdto);
@@ -42,13 +47,14 @@ public class ProductController {
 		System.out.println(rdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
+		//System.out.println("rdto는    " + rdto);
 		mav.setViewName("Product/ResellRetrieve");
 		return mav;
 	}
 	
 	@RequestMapping("/SList")
 	@ResponseBody
-	public ModelAndView ResellList(SellRDTO sdto) {//sell_rno로 판매자 정보 가져오기
+	public ModelAndView SellList(SellRDTO sdto) {//sell_rno로 판매자 정보 가져오기
 //		MemberDTO mdto = (MemberDTO) session.getAttribute("login");
 //		System.out.println(mdto);
 		List<SellRDTO> slist = (List<SellRDTO>) service.SellRList(sdto);
@@ -59,6 +65,17 @@ public class ProductController {
 		//System.out.println(sdto);
 		return mav;
 	}
+	
+	@RequestMapping("/RList")
+	@ResponseBody
+	public ModelAndView ResellList(ResellRDTO rdto) {//sell_rno로 판매자 정보 가져오기
+		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellRList(rdto);
+		System.out.println("rlist는 "+rlist);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("rdto", rlist);
+		mav.setViewName("Product/RList");
+		return mav;
+	}	
 
 
 }

@@ -37,7 +37,7 @@ $(document).ready(function(){
 상품(래플)이름 : <input type="text" name="rafflename" value="" placeholder="상품이름을 입력하세요"><br>
 totalprice : <input type="text" id="totalprice" name="totalprice" value="">원<br>
 perprice : <input type="text" id="perprice" name="perprice" value="">원<br>
-수량 : <input type="text" id="attendamount" name="attendamount" value="" placeholder="수량"><br>
+스팟 수 : <input type="text" id="attendamount" name="attendamount" value="" placeholder="수량"><br>
 래플 진행 기간 : <input type="date" id="deadline" name="deadline" value="" min="1980-01-01" max="2022-12-31"><br>
 제품 설명 : <input type="text" name="text" value="" placeholder="게시글 내용을 작성해주세요."><br>
 이미지 등록 : <input type="file" id="imgUpload" name="img" value=""><br>

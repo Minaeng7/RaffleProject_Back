@@ -26,5 +26,9 @@ public class ListDAO {
 	public List<SellRDTO> SellRList(SellRDTO sdto) {
 		return template.selectList("RaffleMapper.SellRList", sdto);
 	}
+
+	public List<ResellRDTO> ResellRList(ResellRDTO rdto) {
+		return template.selectList("RaffleMapper.ResellRList", rdto);
+	}
 	
 }

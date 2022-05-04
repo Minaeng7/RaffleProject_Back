@@ -12,8 +12,8 @@
 		text, total_price, deadline, img)
 		values (#{resell_rno}, #{memberno},
 		#{nickname}, #{rafflename},
-		#{attend_amount}, #{per_price}, #{text},
-		#{total_price}, #{deadline}, #{img})
+		#{attendamount}, #{perprice}, #{text},
+		#{totalprice}, #{deadline}, #{img})
 	</insert>
 
 	<insert id="addSell_r" parameterType="SellRDTO">
@@ -30,6 +30,10 @@
 	<select id="SellRList" parameterType="arraylist" resultType="SellRDTO">
 		select * from sell_r
 	</select>
+	
+	<select id="ResellRList" parameterType="arraylist" resultType="ResellRDTO">
+		select * from resell_r
+	</select>	
 
 	<select id="selectMyAttendedRaffleR" parameterType="int"
 		resultType="ResellRDTO">

@@ -26,4 +26,8 @@ public class ListService {
 		return dao.SellRList(sdto);
 	}
 
+	public List<ResellRDTO> ResellRList(ResellRDTO rdto) {
+		return dao.ResellRList(rdto);
+	}
+
 }
