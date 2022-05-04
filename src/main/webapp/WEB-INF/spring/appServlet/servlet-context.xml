@@ -24,6 +24,7 @@
 	<view-controller path="/UpdateMyRaffleS" view-name="/MyRaffle/UpdateMyRaffleS"/>
 	<view-controller path="/UpdateMyAttendingR" view-name="/MyRaffle/UpdateAttendingR"/>
 	<view-controller path="/UpdateMyAttendingS" view-name="/MyRaffle/UpdateAttendingS"/>
+	<view-controller path="/RAttendingRaffle" view-name="RAttendingRaffle"/>
 
 	<view-controller path="/RList" view-name="/Product/RList"/>
 

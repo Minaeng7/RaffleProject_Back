@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,7 +38,7 @@ public class ProductController {
 		System.out.println(sdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", sdto);
-		mav.setViewName("Product/SellRetrieve");
+		mav.setViewName("Product/SList");
 		return mav;
 	}
 	
@@ -48,27 +49,22 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
 		//System.out.println("rdto는    " + rdto);
-		mav.setViewName("Product/ResellRetrieve");
+		mav.setViewName("Product/RList");
 		return mav;
 	}
 	
 	@RequestMapping("/SList")
-	@ResponseBody
-	public ModelAndView SellList(SellRDTO sdto) {//sell_rno로 판매자 정보 가져오기
-//		MemberDTO mdto = (MemberDTO) session.getAttribute("login");
-//		System.out.println(mdto);
+	public ModelAndView SellList(SellRDTO sdto) {
 		List<SellRDTO> slist = (List<SellRDTO>) service.SellRList(sdto);
 		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
 		mav.setViewName("Product/SList");
-		//System.out.println(sdto);
 		return mav;
 	}
 	
 	@RequestMapping("/RList")
-	@ResponseBody
-	public ModelAndView ResellList(ResellRDTO rdto) {//sell_rno로 판매자 정보 가져오기
+	public ModelAndView ResellList(ResellRDTO rdto) {
 		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellRList(rdto);
 		System.out.println("rlist는 "+rlist);
 		ModelAndView mav = new ModelAndView();
@@ -76,6 +72,16 @@ public class ProductController {
 		mav.setViewName("Product/RList");
 		return mav;
 	}	
+	@RequestMapping(value="/ResellRetrieve")
+	public ModelAndView ResllRetrieve(int resell_rno, ResellRDTO rdto) {
+		System.out.println("ResellRetrieve 호출");
+		ModelAndView mav = new ModelAndView();
+		rdto = service.ResellRetrieve(resell_rno);
+		//System.out.println(resell_rno);
+		mav.addObject("rdto", rdto);
+		mav.setViewName("Product/ResellRetrieve");
+		return mav;
+	}
 
 	@RequestMapping("/loginCheck/UpdateRaffleR")
 	public String UpdateMyRaffleR() {

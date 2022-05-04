@@ -54,4 +54,9 @@ public class AttendController {
 		Sservice.UpdateMyAttendingS(rdto);
 		return "redirect:Mypage";
 	}
+	@RequestMapping("/loginCheck/RAttendingRaffle")
+	public String RAttendingRaffle() {
+		System.out.println("RAttendingRaffle 호출");
+		return "redirect:../RAttendingRaffle";
+	}
 }

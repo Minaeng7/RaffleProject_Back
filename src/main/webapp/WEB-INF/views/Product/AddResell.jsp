@@ -32,7 +32,7 @@ $(document).ready(function(){
 	<input type="hidden" name="memberno" value="${login.memberno }">
 	<input type="hidden" name="nickname" value="${login.nickname }">
 회원 번호 : ${login.memberno }<br>
-래플 번호 : <input type="text" name="resell_rno" value="" placeholder="resell 래플번호 입력하세요"><br>
+래플 번호 : <input type="text" name="resell_rno" value="1" placeholder="resell 래플번호 입력하세요"><br>
 닉네임 : ${login.nickname }<br>
 상품(래플)이름 : <input type="text" name="rafflename" value="" placeholder="상품이름을 입력하세요"><br>
 totalprice : <input type="text" id="totalprice" name="totalprice" value="">원<br>

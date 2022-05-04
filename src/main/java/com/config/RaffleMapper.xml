@@ -80,4 +80,10 @@
 	,raffleamount = #{raffleamount},deadline = #{deadline}, text = #{text}, img = #{img}
 	where sell_rno = #{sell_rno}
 	</update>
+	
+	<select id="ResellRetrieve" parameterType="int" resultType="ResellRDTO">
+		select *
+		from resell_r
+		where resell_rno = #{resell_rno}
+	</select>
 </mapper>

@@ -40,5 +40,9 @@ public class ListDAO {
 		return template.selectList("RaffleMapper.ResellRList", rdto);
 
 	}
+
+	public ResellRDTO ResellRetrieve(int resell_rno) {
+		return template.selectOne("RaffleMapper.ResellRetrieve", resell_rno);
+	}
 	
 }

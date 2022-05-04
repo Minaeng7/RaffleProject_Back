@@ -41,4 +41,8 @@ public class ListService {
 
 	}
 
+	public ResellRDTO ResellRetrieve(int resell_rno) {
+		return dao.ResellRetrieve(resell_rno);
+	}
+
 }
