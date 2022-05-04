@@ -26,6 +26,7 @@ public class ListService {
 		return dao.SellRList(sdto);
 	}
 
+
 	public void UpdateResell_r(ResellRDTO rdto) {
 		dao.UpdateResell_R(rdto);
 		
@@ -34,6 +35,10 @@ public class ListService {
 	public void UpdateSell_r(SellRDTO rdto) {
 		dao.UpdateSell_R(rdto);
 		
+	}
+	public List<ResellRDTO> ResellRList(ResellRDTO rdto) {
+		return dao.ResellRList(rdto);
+
 	}
 
 }

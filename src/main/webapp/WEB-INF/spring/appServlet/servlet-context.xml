@@ -24,6 +24,9 @@
 	<view-controller path="/UpdateMyRaffleS" view-name="/MyRaffle/UpdateMyRaffleS"/>
 	<view-controller path="/UpdateMyAttendingR" view-name="/MyRaffle/UpdateAttendingR"/>
 	<view-controller path="/UpdateMyAttendingS" view-name="/MyRaffle/UpdateAttendingS"/>
+
+	<view-controller path="/RList" view-name="/Product/RList"/>
+
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 

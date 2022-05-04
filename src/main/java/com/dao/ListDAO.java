@@ -27,6 +27,7 @@ public class ListDAO {
 		return template.selectList("RaffleMapper.SellRList", sdto);
 	}
 
+
 	public void UpdateResell_R(ResellRDTO rdto) {
 		template.update("RaffleMapper.UpdateResell_r",rdto);
 		
@@ -34,7 +35,10 @@ public class ListDAO {
 
 	public void UpdateSell_R(SellRDTO rdto) {
 		template.update("RaffleMapper.UpdateSell_r",rdto);
-		
+	}
+	public List<ResellRDTO> ResellRList(ResellRDTO rdto) {
+		return template.selectList("RaffleMapper.ResellRList", rdto);
+
 	}
 	
 }

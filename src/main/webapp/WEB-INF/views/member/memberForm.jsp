@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <form action="memberAdd" method="get">
-<input type = "hidden" name = "memberno" value = "">
+<input type = "hidden" name = "memberno" value = "1">
 아이디:<input type="text" name="userid" id="userid">
 <span id="result"></span>
 <br> 
@@ -12,7 +12,10 @@
 <br> 
 이름:<input type="text" name="username"><br> 
 닉네임:<input type="text" name="nickname"><br> 
-생년월일(8자리):<input type="text" name="birth"><br> 
+<!-- 생년월일(8자리):<input type="text" name="birth"><br> --> 
+생년월일:<input type="date" id="start" name="birth"
+       					value="2000-01-01"
+       					min="1900-01-01" max="2022-12-31"><br>
 주소:<input type="text" name="post" id="sample4_postcode" placeholder="우편번호">
 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
 <input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소">
