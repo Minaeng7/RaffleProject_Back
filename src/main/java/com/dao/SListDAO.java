@@ -24,4 +24,9 @@ public class SListDAO {
 		List<SListDTO> list = session.selectList("ListMapper.SShuffle",sell_rno);
 		return list;
 	}
+
+	public void UpdateMyAttendingS(SListDTO rdto) {
+		session.update("ListMapper.UpdateMyAttendingS");
+		
+	}
 }

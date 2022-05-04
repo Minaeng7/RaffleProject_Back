@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Attending Raffle</h1>
-<form action ="Attend">
+<form action ="SAttend">
 <input type = "hidden" id = "raffleno" name = "Raffleno" value = "1">
 <input type = "hidden" id = "memberno" name = "memberno"value = "1"><!-- 참여하고 있는 member의 number -->
 <input type = "hidden" id = "Rafflename" name = "Rafflename" value = "NIKE-limited">

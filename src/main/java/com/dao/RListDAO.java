@@ -23,4 +23,9 @@ public class RListDAO {
 		List<RListDTO> list = session.selectList("ListMapper.RShuffle",resell_rno);
 		return list;
 	}
+
+	public void UpdateMyAttendingR(RListDTO rdto) {
+		session.update("ListMapper.UpdateMyAttendingR");
+		
+	}
 }

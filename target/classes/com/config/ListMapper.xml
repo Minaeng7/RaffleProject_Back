@@ -35,4 +35,18 @@
 		from slist
 		where sell_rno = #{sell_rno}
 	</select>
+	<update id = "UpdateMyAttendingR" parameterType = "RListDTO">
+	update rlist
+	set username = #{username}, post = #{post}, addr1 = #{addr1},
+	addr2 = #{addr2}, phone = #{phone}, spot = #{spot}
+	where memberno = #{memberno}
+	and resell_rno = #{resell_rno}
+	</update>
+	<update id = "UpdateMyAttendingS" parameterType = "SListDTO">
+	update slist
+	set username = #{username}, post = #{post}, addr1 = #{addr1},
+	addr2 = #{addr2}, phone = #{phone}
+	where memberno = #{memberno}
+	and sell_rno = #{sell_rno}
+	</update>
 </mapper>

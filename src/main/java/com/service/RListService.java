@@ -23,4 +23,10 @@ public class RListService {
 		List<RListDTO> list = dao.shuffle(resell_rno);
 		return list;
 	}
+
+	public void UpdateMyAttendingR(RListDTO rdto) {
+		dao.UpdateMyAttendingR(rdto);
+		
+	}
+
 }

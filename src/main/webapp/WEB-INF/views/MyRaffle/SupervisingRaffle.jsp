@@ -13,7 +13,10 @@
 ${MyRaffleR}
 ${MyRaffleS}<br>
 <form action="UpdateMyRaffleR">
-<button>수정</button>
+<button>Resell수정</button>
+</form>
+<form action="UpdateMyRaffleS">
+<button>sell수정</button>
 </form>
 </body>
 </html>

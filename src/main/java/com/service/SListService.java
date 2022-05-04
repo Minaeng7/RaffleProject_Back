@@ -24,4 +24,9 @@ public class SListService {
 		List<SListDTO> list = dao.shuffle(sell_rno);
 		return list;
 	}
+
+	public void UpdateMyAttendingS(SListDTO rdto) {
+		dao.UpdateMyAttendingS(rdto);
+		
+	}
 }

@@ -60,20 +60,20 @@ public class ProductController {
 		return mav;
 	}
 
-	@RequestMapping("/UpdateRaffleR")
+	@RequestMapping("/loginCheck/UpdateRaffleR")
 	public String UpdateMyRaffleR() {
 		return "MyRaffle/UpdateMyRaffleR";
 	}
-	@RequestMapping("/UpdateRaffleS")
+	@RequestMapping("/loginCheck/UpdateRaffleS")
 	public String UpdateMyRaffleS() {
 		return "MyRaffle/UpdateMyRaffleS";
 	}
-	@RequestMapping("/UpdateMyRaffleRR")
+	@RequestMapping("/loginCheck/UpdateMyRaffleRR")
 	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {
 		service.UpdateResell_r(rdto);
 		return "redirect:Mypage";
 	}
-	@RequestMapping("/UpdateMyRaffleSS")
+	@RequestMapping("/loginCheck/UpdateMyRaffleSS")
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
 		return "redirect:Mypage";
