@@ -4,18 +4,18 @@ import org.apache.ibatis.type.Alias;
 
 @Alias("MemberDTO")
 public class MemberDTO {
-	private int memberno;
-	private String userid;
-	private String passwd;
-	private String username;
-	private String nickname;
-	private String post;
-	private String addr1;
-	private String addr2;
-	private String phone;
-	private String birth;
-	private String email1;
-	private String email2;
+	int memberno;
+	String userid;
+	String passwd;
+	String username;
+	String nickname;
+	String post;
+	String addr1;
+	String addr2;
+	String phone;
+	String birth;
+	String email1;
+	String email2;
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub

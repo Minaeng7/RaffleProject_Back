@@ -22,7 +22,7 @@ public class MemberController {
 		model.addAttribute("success", "회원가입성공");
 		return "Main";
 	}
-	@RequestMapping(value = "/Mypage")
+	@RequestMapping(value = "/Myinfo")
 	public ModelAndView Mypage(HttpSession session) {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();		
@@ -30,7 +30,7 @@ public class MemberController {
 		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage", dto);
-		mav.setViewName("Mypage");
+		mav.setViewName("Mypage/Myinfo");
 		return mav;
 		
 		

@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Seller Raffle</h1>
-${AttendedRaffleR}
-${AttendedRaffleS}
-
+<h1>My info</h1>
+${mypage}
 </body>
 </html>

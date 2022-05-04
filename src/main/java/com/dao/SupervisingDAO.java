@@ -16,24 +16,24 @@ public class SupervisingDAO {
 	@Autowired
 	SqlSessionTemplate session;
 
-	public List<ResellRDTO> selectMyAttendedRaffleR(String memberno) {
+	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {
 		List<ResellRDTO> list = new ArrayList<>();
-		list= session.selectList("MemberMapper.selectMyAttendedRaffleR", memberno);
+		list= session.selectList("RaffleMapper.selectMyAttendedRaffleR", memberno);
 		return list;
 	}
 
-	public List<ResellRDTO> selectMyRaffleR(String memberno) {
+	public List<ResellRDTO> selectMyRaffleR(int memberno) {
 		List <ResellRDTO> list = new ArrayList<>();
 		list = session.selectList("RaffleMapper.selectMyRaffleR", memberno);
 		return list;
 	}
-	public List<SellRDTO> selectMyAttendedRaffleS(String memberno) {
+	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) {
 		List<SellRDTO> list = new ArrayList<>();
-		list= session.selectList("MemberMapper.selectMyAttendedRaffleS", memberno);
+		list= session.selectList("RaffleMapper.selectMyAttendedRaffleS", memberno);
 		return list;
 	}
 
-	public List<SellRDTO> selectMyRaffleS(String memberno) {
+	public List<SellRDTO> selectMyRaffleS(int memberno) {
 		List <SellRDTO> list = new ArrayList<>();
 		list = session.selectList("RaffleMapper.selectMyRaffleS", memberno);
 		return list;

@@ -5,21 +5,29 @@
 <mapper namespace="RaffleMapper">
 
 
-		<insert id="addResell_r" parameterType="ResellRDTO">
-		insert into resell_r (resell_rno, memberno, nickname, rafflename,
-		attend_amount, per_price, text, total_price, deadline, img)
-		values (#{resell_rno}, #{memberno}, #{nickname}, #{rafflename},
-		#{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{img})
-		</insert>
-	
-	<insert id="addSell_r" parameterType="SellRDTO">
-		insert into sell_r (sell_rno, memberno, nickname, rafflename, raffleprice,
-		raffleamount, img, text, deadline)
-		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
-		#{raffleprice}, #{raffleamount}, #{img}, #{text}, #{deadline})
+	<insert id="addResell_r" parameterType="ResellRDTO">
+		insert into resell_r
+		(resell_rno, memberno, nickname, rafflename,
+		attend_amount, per_price,
+		text, total_price, deadline, img)
+		values (#{resell_rno}, #{memberno},
+		#{nickname}, #{rafflename},
+		#{attend_amount}, #{per_price}, #{text},
+		#{total_price}, #{deadline}, #{img})
 	</insert>
 
- 		<select id="selectMyAttendedRaffleR" parameterType="String"
+	<insert id="addSell_r" parameterType="SellRDTO">
+		insert into sell_r
+		(sell_rno, memberno, nickname, rafflename, raffleprice,
+		raffleamount,
+		img, text, deadline)
+		values (#{sell_rno}, #{memberno}, #{nickname},
+		#{rafflename},
+		#{raffleprice}, #{raffleamount}, #{img}, #{text},
+		#{deadline})
+	</insert>
+
+	<select id="selectMyAttendedRaffleR" parameterType="int"
 		resultType="ResellRDTO">
 		select *
 		from resell_R
@@ -29,23 +37,24 @@
 		where memberno = #{memberno}
 		)
 	</select>
- 	<select id="selectMyRaffleR" parameterType="String"
+	<select id="selectMyRaffleR" parameterType="int"
 		resultType="ResellRDTO">
 		select *
 		from resell_R
 		where memberno = #{memberno}
 	</select>
-			<select id="selectMyAttendedRaffleS" parameterType="String"
+	<select id="selectMyAttendedRaffleS" parameterType="int"
 		resultType="SellRDTO">
 		select *
 		from sell_R
 		where sell_rno in (
 		select sell_rno
-		from slist
+		from
+		slist
 		where memberno = #{memberno}
 		)
 	</select>
- 	<select id="selectMyRaffleS" parameterType="String"
+	<select id="selectMyRaffleS" parameterType="int"
 		resultType="SellRDTO">
 		select *
 		from sell_R

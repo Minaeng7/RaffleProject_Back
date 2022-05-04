@@ -16,25 +16,25 @@ public class SupervisingService {
 	@Autowired
 	SupervisingDAO dao;
 
-	public List<ResellRDTO> selectMyAttendedRaffleR(String memberno) {
+	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {
 		List<ResellRDTO> list = new ArrayList<>();
 		list = dao.selectMyAttendedRaffleR(memberno);
 		return list;
 	}
 
-	public List<ResellRDTO> selectMyRaffleR(String memberno) {
+	public List<ResellRDTO> selectMyRaffleR(int memberno) {
 		List<ResellRDTO> list = new ArrayList<>();
 		list = dao.selectMyRaffleR(memberno);
 		return list;
 	}
 
-	public List<SellRDTO> selectMyAttendedRaffleS(String memberno) {
+	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) {
 		List<SellRDTO> list = new ArrayList<>();
 		list = dao.selectMyAttendedRaffleS(memberno);
 		return list;
 	}
 
-	public List<SellRDTO> selectMyRaffleS(String memberno) {
+	public List<SellRDTO> selectMyRaffleS(int memberno) {
 		List<SellRDTO> list = new ArrayList<>();
 		list = dao.selectMyRaffleS(memberno);
 		return list;

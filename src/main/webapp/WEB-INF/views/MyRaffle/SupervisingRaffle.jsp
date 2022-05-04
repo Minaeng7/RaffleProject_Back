@@ -1,3 +1,4 @@
+<%@page import="org.springframework.web.servlet.ModelAndView"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 내가 판매하고 있는 래플 상품 -->
+<h1>My Raffle</h1>
+${MyRaffleR}
+${MyRaffleS}
 </body>
 </html>
