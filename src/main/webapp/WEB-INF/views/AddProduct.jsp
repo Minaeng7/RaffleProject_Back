@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="common/top.jsp" flush="true"></jsp:include><br>
-<jsp:include page="common/menu.jsp" flush="true"></jsp:include><br>
-<jsp:include page="Product/AddProduct.jsp"></jsp:include>
+AddProduct.jsp
+<%-- <jsp:include page="Product/AddSell.jsp" flush="true"></jsp:include> --%>
 </body>
 </html>

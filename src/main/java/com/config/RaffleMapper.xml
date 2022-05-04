@@ -18,6 +18,10 @@
 		values (#{sell_rno}, #{memberno}, #{nickname}, #{rafflename},
 		#{raffleprice}, #{raffleamount}, #{img}, #{text}, #{deadline})
 	</insert>
+	
+	<select id="SellRList" parameterType="arraylist" resultType="SellRDTO">
+		select * from sell_r
+	</select>
 
  		<select id="selectMyAttendedRaffleR" parameterType="String"
 		resultType="ResellRDTO">

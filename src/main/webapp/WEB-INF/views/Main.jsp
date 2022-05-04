@@ -13,6 +13,5 @@
 <h1>Main</h1>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
 <jsp:include page="common/menu.jsp" flush="true"></jsp:include>
-<a href="loginCheck/AddProduct">상품등록</a>
 </body>
 </html>
