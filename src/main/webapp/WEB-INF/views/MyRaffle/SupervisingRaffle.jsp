@@ -6,10 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 <h1>My Raffle</h1>
 ${MyRaffleR}
-${MyRaffleS}
+${MyRaffleS}<br>
+<form action="UpdateMyRaffleR">
+<button>수정</button>
+</form>
 </body>
 </html>

@@ -10,6 +10,8 @@
 <h1>Seller Raffle</h1>
 ${AttendedRaffleR}
 ${AttendedRaffleS}
-
+<form action="UpdateMyRaffleS">
+<button>수정</button>
+</form>
 </body>
 </html>

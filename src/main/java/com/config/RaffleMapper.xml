@@ -64,4 +64,16 @@
 		from sell_R
 		where memberno = #{memberno}
 	</select>
+	<update id="UpdateResell_r" parameterType = "ResellRDTO">
+	update resell_r
+	set rafflename = #{rafflename}, total_price = #{totalprice}
+	,attend_amount = #{attendamount},deadline = #{deadline}, text = #{text}, img = #{img}
+	where resell_rno = #{resell_rno}
+	</update>
+	<update id="UpdateSell_r" parameterType = "SellRDTO">
+	update sell_r
+	set rafflename = #{rafflename}, raffleprice = #{raffleprice}
+	,raffleamount = #{raffleamount},deadline = #{deadline}, text = #{text}, img = #{img}
+	where sell_rno = #{sell_rno}
+	</update>
 </mapper>
