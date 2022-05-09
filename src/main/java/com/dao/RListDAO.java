@@ -25,7 +25,12 @@ public class RListDAO {
 	}
 
 	public void UpdateMyAttendingR(RListDTO rdto) {
-		session.update("ListMapper.UpdateMyAttendingR");
+		session.update("ListMapper.UpdateMyAttendingR", rdto);
+		
+	}
+
+	public void DeleteMyAttendingR(int memberno) {
+		session.delete("ListMapper.DeleteMyAttendingR", memberno);
 		
 	}
 }

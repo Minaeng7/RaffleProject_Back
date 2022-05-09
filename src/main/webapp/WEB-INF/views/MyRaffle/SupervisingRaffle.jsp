@@ -18,5 +18,11 @@ ${MyRaffleS}<br>
 <form action="UpdateMyRaffleS">
 <button>sell수정</button>
 </form>
+<form action="DeleteMyRaffleR">
+<button>Resell삭제</button>
+</form>
+<form action="DeleteMyRaffleS">
+<button>sell삭제</button>
+</form>
 </body>
 </html>

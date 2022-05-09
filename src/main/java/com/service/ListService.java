@@ -45,4 +45,14 @@ public class ListService {
 		return dao.ResellRetrieve(resell_rno);
 	}
 
+	public void DeleteMyRaffleR(int memberno) {
+		dao.DeleteMyRaffleR(memberno);
+		
+	}
+
+	public void DeleteMyRaffleS(int memberno) {
+		dao.DeleteMyRaffleS(memberno);
+		
+	}
+
 }

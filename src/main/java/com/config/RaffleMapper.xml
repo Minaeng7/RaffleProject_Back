@@ -86,4 +86,15 @@
 		from resell_r
 		where resell_rno = #{resell_rno}
 	</select>
+	
+	<delete id = "DeleteResell_r" parameterType = "int">
+	delete 
+	from resell_r
+	where memberno = #{memberno}
+	</delete>
+	<delete id = "Deletesell_r" parameterType = "int">
+	delete 
+	from sell_r
+	where memberno = #{memberno}
+	</delete>
 </mapper>

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dto.MemberDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 import com.service.ListService;
@@ -91,14 +92,36 @@ public class ProductController {
 	public String UpdateMyRaffleS() {
 		return "MyRaffle/UpdateMyRaffleS";
 	}
-	@RequestMapping("/loginCheck/UpdateMyRaffleRR")
+	@RequestMapping("UpdateMyRaffleRR")
 	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {
 		service.UpdateResell_r(rdto);
 		return "redirect:Mypage";
 	}
-	@RequestMapping("/loginCheck/UpdateMyRaffleSS")
+	@RequestMapping("UpdateMyRaffleSS")
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
+		return "redirect:Mypage";
+	}
+	@RequestMapping("/loginCheck/DeleteMyRaffleR")
+	public String DeleteMyRaffleR() {
+		return "MyRaffle/DeleteMyRaffleR";
+	}
+	@RequestMapping("/loginCheck/DeleteMyRaffleS")
+	public String DeleteMyRaffleS() {
+		return "MyRaffle/DeleteMyRaffleS";
+	}
+	@RequestMapping("DeleteMyRaffleRR")// Raffleno를 넘겨주도록 향후 수정
+	public String DeleteMyRaffleRR(HttpSession session) {
+		MemberDTO dto = (MemberDTO)session.getAttribute("login");
+		int memberno = dto.getMemberno();
+		service.DeleteMyRaffleR(memberno);
+		return "redirect:Mypage";
+	}
+	@RequestMapping("/DeleteMyRaffleSS")// Raffleno를 넘겨주도록 향후 수정
+	public String DeleteMyRaffleSS(HttpSession session) {
+		MemberDTO dto = (MemberDTO)session.getAttribute("login");
+		int memberno = dto.getMemberno();
+		service.DeleteMyRaffleS(memberno);
 		return "redirect:Mypage";
 	}
 }

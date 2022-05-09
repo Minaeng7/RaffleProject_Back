@@ -29,4 +29,9 @@ public class RListService {
 		
 	}
 
+	public void DeleteMyAttendingR(int memberno) {
+		dao.DeleteMyAttendingR(memberno);
+		
+	}
+
 }

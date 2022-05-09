@@ -26,7 +26,12 @@ public class SListDAO {
 	}
 
 	public void UpdateMyAttendingS(SListDTO rdto) {
-		session.update("ListMapper.UpdateMyAttendingS");
+		session.update("ListMapper.UpdateMyAttendingS", rdto);
+		
+	}
+
+	public void DelteMyAttendingS(int memberno) {
+		session.delete("ListMapper.DeleteMyAttendingS", memberno);
 		
 	}
 }

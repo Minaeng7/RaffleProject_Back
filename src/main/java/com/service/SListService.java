@@ -29,4 +29,9 @@ public class SListService {
 		dao.UpdateMyAttendingS(rdto);
 		
 	}
+
+	public void DeleteMyAttendingS(int memberno) {
+		dao.DelteMyAttendingS(memberno);
+		
+	}
 }

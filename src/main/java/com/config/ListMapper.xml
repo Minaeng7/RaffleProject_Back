@@ -49,4 +49,14 @@
 	where memberno = #{memberno}
 	and sell_rno = #{sell_rno}
 	</update>
+	<delete id = "DeleteMyAttendingR" parameterType = "int">
+	delete
+	from rlist
+	where memberno = #{memberno}
+	</delete>
+	<delete id = "DeleteMyAttendingS" parameterType = "int">
+	delete
+	from slist
+	where memberno = #{memberno}
+	</delete>
 </mapper>

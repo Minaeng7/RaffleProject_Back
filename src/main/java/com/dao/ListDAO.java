@@ -44,5 +44,15 @@ public class ListDAO {
 	public ResellRDTO ResellRetrieve(int resell_rno) {
 		return template.selectOne("RaffleMapper.ResellRetrieve", resell_rno);
 	}
+
+	public void DeleteMyRaffleR(int memberno) {
+		template.delete("RaffleMapper.DeleteResell_r",memberno);
+		
+	}
+
+	public void DeleteMyRaffleS(int memberno) {
+		template.delete("RaffleMapper.Deletesell_r",memberno);
+		
+	}
 	
 }
