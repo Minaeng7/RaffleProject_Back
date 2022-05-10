@@ -10,7 +10,7 @@
 		(resell_rno, memberno, nickname, rafflename,
 		attend_amount, per_price,
 		text, total_price, deadline, img)
-		values (#{resell_rno}, #{memberno},
+		values (SEQ_RESELL_RNO.nextval, #{memberno},
 		#{nickname}, #{rafflename},
 		#{attendamount}, #{perprice}, #{text},
 		#{totalprice}, #{deadline}, #{img})
@@ -21,7 +21,7 @@
 		(sell_rno, memberno, nickname, rafflename, raffleprice,
 		raffleamount,
 		img, text, deadline)
-		values (#{sell_rno}, #{memberno}, #{nickname},
+		values (SEQ_SELL_RNO.nextval, #{memberno}, #{nickname},
 		#{rafflename},
 		#{raffleprice}, #{raffleamount}, #{img}, #{text},
 		#{deadline})

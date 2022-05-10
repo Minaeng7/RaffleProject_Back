@@ -15,7 +15,7 @@
 	<insert id="memberAdd" parameterType="MemberDTO">
 		insert into member(memberno,userid,passwd,username,nickname,post,
 		addr1,addr2,phone,birth,email1,email2)
-		values( #{memberno},#{userid},#{passwd},#{username},#{nickname},#{post},
+		values( SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{nickname},#{post},
 		#{addr1},#{addr2},#{phone},#{birth},#{email1},#{email2})
 	</insert>
 	<select id="Mypage" parameterType = "int" resultType = "MemberDTO">
