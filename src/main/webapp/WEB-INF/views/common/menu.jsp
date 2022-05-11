@@ -3,5 +3,5 @@
 <a href="/raffle/">Main</a>&nbsp;
 <a href="SList">SELL</a>&nbsp;
 <a href="RList">RESELL</a>&nbsp;
-<a href="">게시판</a>&nbsp;
+<a href="board">게시판</a>&nbsp;
 <BR>

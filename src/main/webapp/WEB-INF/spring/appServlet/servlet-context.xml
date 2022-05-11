@@ -30,6 +30,7 @@
 	<view-controller path="/DeleteMyAttendingR" view-name="/MyRaffle/DeleteAttendingR"/>
 	<view-controller path="/DeleteMyAttendingS" view-name="/MyRaffle/DeleteAttendingS"/>
 	<view-controller path="/RList" view-name="/Product/RList"/>
+	<view-controller path="/board" view-name="board"/>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
