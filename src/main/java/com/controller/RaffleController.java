@@ -16,15 +16,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dto.MemberDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
-import com.service.ListService;
+import com.service.RaffleService;
 
 @Controller
-public class ProductController {
+public class RaffleController {
 	@Autowired
-	ListService service;
+	RaffleService service;
 	
 	@RequestMapping(value="/loginCheck/AddSell")
-	public String AddProduct() {
+	public String AddProduct() {//화면전환
 		return "redirect:../AddSell";
 	}
 	
@@ -34,7 +34,7 @@ public class ProductController {
 	}	
 	
 	@RequestMapping(value="/loginCheck/SellRetrieve")
-	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {
+	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
 		service.addSell_r(sdto);
 		System.out.println(sdto);
 		ModelAndView mav = new ModelAndView();
@@ -55,8 +55,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/SList")
-	public ModelAndView SellList(SellRDTO sdto) {
-		List<SellRDTO> slist = (List<SellRDTO>) service.SellRList(sdto);
+	public ModelAndView SellList(SellRDTO sdto) {//리스트 뿌리기
+		List<SellRDTO> slist = (List<SellRDTO>) service.SellList(sdto);
 		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
@@ -66,7 +66,7 @@ public class ProductController {
 	
 	@RequestMapping("/RList")
 	public ModelAndView ResellList(ResellRDTO rdto) {
-		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellRList(rdto);
+		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList(rdto);
 		System.out.println("rlist는 "+rlist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
@@ -74,10 +74,10 @@ public class ProductController {
 		return mav;
 	}	
 	@RequestMapping(value="/ResellRetrieve")
-	public ModelAndView ResllRetrieve(int resell_rno, ResellRDTO rdto) {
+	public ModelAndView ResllRetrieve(int resell_rno) {//상품상세정보
 		System.out.println("ResellRetrieve 호출");
 		ModelAndView mav = new ModelAndView();
-		rdto = service.ResellRetrieve(resell_rno);
+		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
 		//System.out.println(resell_rno);
 		mav.addObject("rdto", rdto);
 		mav.setViewName("Product/ResellRetrieve");
@@ -85,7 +85,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/loginCheck/UpdateRaffleR")
-	public String UpdateMyRaffleR() {
+	public String UpdateMyRaffleR() {//만든 래플 수정 (등록상품 수정) - 화면전환
 		return "MyRaffle/UpdateMyRaffleR";
 	}
 	@RequestMapping("/loginCheck/UpdateRaffleS")
@@ -93,7 +93,7 @@ public class ProductController {
 		return "MyRaffle/UpdateMyRaffleS";
 	}
 	@RequestMapping("UpdateMyRaffleRR")
-	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {
+	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {//수정
 		service.UpdateResell_r(rdto);
 		return "redirect:Mypage";
 	}
@@ -103,7 +103,7 @@ public class ProductController {
 		return "redirect:Mypage";
 	}
 	@RequestMapping("/loginCheck/DeleteMyRaffleR")
-	public String DeleteMyRaffleR() {
+	public String DeleteMyRaffleR() {//화면전환
 		return "MyRaffle/DeleteMyRaffleR";
 	}
 	@RequestMapping("/loginCheck/DeleteMyRaffleS")
@@ -111,7 +111,7 @@ public class ProductController {
 		return "MyRaffle/DeleteMyRaffleS";
 	}
 	@RequestMapping("DeleteMyRaffleRR")// Raffleno를 넘겨주도록 향후 수정
-	public String DeleteMyRaffleRR(HttpSession session) {
+	public String DeleteMyRaffleRR(HttpSession session) {//삭제
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		service.DeleteMyRaffleR(memberno);

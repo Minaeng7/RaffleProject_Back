@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.SupervisingDAO;
+import com.dto.MemberDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 
@@ -16,13 +17,13 @@ public class SupervisingService {
 	@Autowired
 	SupervisingDAO dao;
 
-	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {
+	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {//응모한 래플 정보
 		List<ResellRDTO> list = new ArrayList<>();
 		list = dao.selectMyAttendedRaffleR(memberno);
 		return list;
 	}
 
-	public List<ResellRDTO> selectMyRaffleR(int memberno) {
+	public List<ResellRDTO> selectMyRaffleR(int memberno) {//내가 만든 래플 정보
 		List<ResellRDTO> list = new ArrayList<>();
 		list = dao.selectMyRaffleR(memberno);
 		return list;
@@ -39,4 +40,10 @@ public class SupervisingService {
 		list = dao.selectMyRaffleS(memberno);
 		return list;
 	}
+
+	public MemberDTO Mypage(int memberno) {
+		MemberDTO dto = dao.Mypage(memberno);
+		return dto;
+	}
+
 }

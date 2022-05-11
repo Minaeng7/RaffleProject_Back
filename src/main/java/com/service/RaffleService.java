@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.ListDAO;
+import com.dao.RaffleDAO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 
 @Service
-public class ListService {
+public class RaffleService {
 	@Autowired
-	ListDAO dao;
+	RaffleDAO dao;
 	
 	public void addResell_r(ResellRDTO rdto) {
 		dao.addResell_r(rdto);
@@ -22,8 +22,8 @@ public class ListService {
 		dao.addSell_r(sdto);
 	}
 
-	public List<SellRDTO> SellRList(SellRDTO sdto) {
-		return dao.SellRList(sdto);
+	public List<SellRDTO> SellList(SellRDTO sdto) {
+		return dao.SellList(sdto);
 	}
 
 
@@ -36,8 +36,8 @@ public class ListService {
 		dao.UpdateSell_R(rdto);
 		
 	}
-	public List<ResellRDTO> ResellRList(ResellRDTO rdto) {
-		return dao.ResellRList(rdto);
+	public List<ResellRDTO> ResellList(ResellRDTO rdto) {
+		return dao.ResellList(rdto);
 
 	}
 

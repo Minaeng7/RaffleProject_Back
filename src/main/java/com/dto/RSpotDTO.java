@@ -3,7 +3,7 @@ package com.dto;
 import org.apache.ibatis.type.Alias;
 
 @Alias("RListDTO")
-public class RListDTO {
+public class RSpotDTO {
 
 	int resell_rno;
 	int memberno;
@@ -15,11 +15,11 @@ public class RListDTO {
 	String addr2;
 	String phone;
 	int spot;
-	public RListDTO() {
+	public RSpotDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public RListDTO(int resell_rno, int memberno, String rafflename, String nickname, String username, String post,
+	public RSpotDTO(int resell_rno, int memberno, String rafflename, String nickname, String username, String post,
 			String addr1, String addr2, String phone, int spot) {
 		super();
 		this.resell_rno = resell_rno;

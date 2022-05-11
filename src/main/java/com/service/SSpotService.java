@@ -5,27 +5,27 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.SListDAO;
-import com.dto.RListDTO;
-import com.dto.SListDTO;
+import com.dao.SSpotDAO;
+import com.dto.RSpotDTO;
+import com.dto.SSpotDTO;
 
 @Service
-public class SListService {
+public class SSpotService {
 
 	@Autowired
-	SListDAO dao;
+	SSpotDAO dao;
 
-	public void registinglist(SListDTO dto) {
+	public void registinglist(SSpotDTO dto) {
 		dao.registinglist(dto);
 		
 	}
 
-	public List<SListDTO> shuffle(int sell_rno) {
-		List<SListDTO> list = dao.shuffle(sell_rno);
+	public List<SSpotDTO> shuffle(int sell_rno) {
+		List<SSpotDTO> list = dao.shuffle(sell_rno);
 		return list;
 	}
 
-	public void UpdateMyAttendingS(SListDTO rdto) {
+	public void UpdateMyAttendingS(SSpotDTO rdto) {
 		dao.UpdateMyAttendingS(rdto);
 		
 	}

@@ -24,9 +24,4 @@ public class MemberSerivce {
 		return dto;
 	}
 
-	public MemberDTO Mypage(int memberno) {
-		MemberDTO dto = dao.Mypage(memberno);
-		return dto;
-	}
-
 }

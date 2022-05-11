@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.ResellRDTO;
-import com.dto.SListDTO;
+import com.dto.SSpotDTO;
 import com.dto.SellRDTO;
 
 @Repository
-public class ListDAO {
+public class RaffleDAO {
 	@Autowired
 	SqlSessionTemplate template;
 
@@ -23,8 +23,8 @@ public class ListDAO {
 		template.insert("RaffleMapper.addSell_r", sdto);
 	}
 
-	public List<SellRDTO> SellRList(SellRDTO sdto) {
-		return template.selectList("RaffleMapper.SellRList", sdto);
+	public List<SellRDTO> SellList(SellRDTO sdto) {
+		return template.selectList("RaffleMapper.SellList", sdto);
 	}
 
 
@@ -36,8 +36,8 @@ public class ListDAO {
 	public void UpdateSell_R(SellRDTO rdto) {
 		template.update("RaffleMapper.UpdateSell_r",rdto);
 	}
-	public List<ResellRDTO> ResellRList(ResellRDTO rdto) {
-		return template.selectList("RaffleMapper.ResellRList", rdto);
+	public List<ResellRDTO> ResellList(ResellRDTO rdto) {
+		return template.selectList("RaffleMapper.ResellList", rdto);
 
 	}
 

@@ -18,13 +18,13 @@ import com.dto.SellRDTO;
 import com.service.SupervisingService;
 
 @Controller
-public class SupervisingController {
+public class SupervisingController {//mypage기능
 
 	@Autowired
 	SupervisingService service;
 	
 	@RequestMapping("/MyAttendedRaffle")
-	public ModelAndView MyAttendedRaffle(HttpSession session) {
+	public ModelAndView MyAttendedRaffle(HttpSession session) {//내가 응모한 리스트
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		List<ResellRDTO> listR = new ArrayList<>();
@@ -38,7 +38,7 @@ public class SupervisingController {
 		return mav;
 	}
 	@RequestMapping("/SupervisingRaffle")
-	public ModelAndView MyRaffle(HttpSession session) {
+	public ModelAndView MyRaffle(HttpSession session) {//내가 등록한 상품 리스트
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		List<ResellRDTO> listR = new ArrayList<>();
@@ -50,6 +50,20 @@ public class SupervisingController {
 		mav.addObject("MyRaffleS", listS);
 		mav.setViewName("MyRaffle/SupervisingRaffle");
 		return mav;
+	}
+
+	@RequestMapping(value = "/Myinfo")
+	public ModelAndView Mypage(HttpSession session) {//내정보보 보기 (회원정보 수정 등)
+		MemberDTO dto = (MemberDTO)session.getAttribute("login");
+		int memberno = dto.getMemberno();		
+		dto = service.Mypage(memberno);
+		System.out.println(dto);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mypage", dto);
+		mav.setViewName("Mypage/Myinfo");
+		return mav;
+		
+		
 	}
 
 }

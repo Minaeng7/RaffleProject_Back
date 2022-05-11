@@ -18,11 +18,6 @@
 		values( SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{nickname},#{post},
 		#{addr1},#{addr2},#{phone},#{birth},#{email1},#{email2})
 	</insert>
-	<select id="Mypage" parameterType = "int" resultType = "MemberDTO">
-	select *
-	from member
-	where memberno = #{memberno}
-	</select>
 <!-- 
 	<select id="login" parameterType="hashmap" resultType="MemberDTO">
 	  select *

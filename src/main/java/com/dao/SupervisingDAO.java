@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dto.MemberDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 
@@ -18,25 +19,30 @@ public class SupervisingDAO {
 
 	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {
 		List<ResellRDTO> list = new ArrayList<>();
-		list= session.selectList("RaffleMapper.selectMyAttendedRaffleR", memberno);
+		list= session.selectList("SupervisingMapper.selectMyAttendedRaffleR", memberno);
 		return list;
 	}
 
 	public List<ResellRDTO> selectMyRaffleR(int memberno) {
 		List <ResellRDTO> list = new ArrayList<>();
-		list = session.selectList("RaffleMapper.selectMyRaffleR", memberno);
+		list = session.selectList("SupervisingMapper.selectMyRaffleR", memberno);
 		return list;
 	}
 	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) {
 		List<SellRDTO> list = new ArrayList<>();
-		list= session.selectList("RaffleMapper.selectMyAttendedRaffleS", memberno);
+		list= session.selectList("SupervisingMapper.selectMyAttendedRaffleS", memberno);
 		return list;
 	}
 
 	public List<SellRDTO> selectMyRaffleS(int memberno) {
 		List <SellRDTO> list = new ArrayList<>();
-		list = session.selectList("RaffleMapper.selectMyRaffleS", memberno);
+		list = session.selectList("SupervisingMapper.selectMyRaffleS", memberno);
 		return list;
+	}
+
+	public MemberDTO Mypage(int memberno) {
+		MemberDTO dto = session.selectOne("SupervisingMapper.Mypage", memberno);
+		return dto;
 	}
 	
 }

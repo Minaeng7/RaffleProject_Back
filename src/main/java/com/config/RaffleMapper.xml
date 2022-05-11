@@ -4,7 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="RaffleMapper">
 
-
 	<insert id="addResell_r" parameterType="ResellRDTO">
 		insert into resell_r
 		(resell_rno, memberno, nickname, rafflename,
@@ -27,47 +26,14 @@
 		#{deadline})
 	</insert>
 	
-	<select id="SellRList" parameterType="arraylist" resultType="SellRDTO">
+	<select id="SellList" parameterType="arraylist" resultType="SellRDTO">
 		select * from sell_r
 	</select>
 	
-	<select id="ResellRList" parameterType="arraylist" resultType="ResellRDTO">
+	<select id="ResellList" parameterType="arraylist" resultType="ResellRDTO">
 		select * from resell_r
 	</select>	
 
-	<select id="selectMyAttendedRaffleR" parameterType="int"
-		resultType="ResellRDTO">
-		select *
-		from resell_R
-		where resell_rno in (
-		select resell_rno
-		from rlist
-		where memberno = #{memberno}
-		)
-	</select>
-	<select id="selectMyRaffleR" parameterType="int"
-		resultType="ResellRDTO">
-		select *
-		from resell_R
-		where memberno = #{memberno}
-	</select>
-	<select id="selectMyAttendedRaffleS" parameterType="int"
-		resultType="SellRDTO">
-		select *
-		from sell_R
-		where sell_rno in (
-		select sell_rno
-		from
-		slist
-		where memberno = #{memberno}
-		)
-	</select>
-	<select id="selectMyRaffleS" parameterType="int"
-		resultType="SellRDTO">
-		select *
-		from sell_R
-		where memberno = #{memberno}
-	</select>
 	<update id="UpdateResell_r" parameterType = "ResellRDTO">
 	update resell_r
 	set rafflename = #{rafflename}, total_price = #{totalprice}

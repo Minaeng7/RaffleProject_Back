@@ -21,9 +21,5 @@ public class MemberDAO {
 		MemberDTO dto = template.selectOne("MemberMapper.login", map);
 		return dto;
 	}
-	public MemberDTO Mypage(int memberno) {
-		MemberDTO dto = template.selectOne("MemberMapper.Mypage", memberno);
-		return dto;
-	}
 
 }

@@ -1,11 +1,14 @@
 package com.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -22,19 +25,24 @@ public class MemberController {
 		model.addAttribute("success", "회원가입성공");
 		return "Main";
 	}
-	@RequestMapping(value = "/Myinfo")
-	public ModelAndView Mypage(HttpSession session) {
-		MemberDTO dto = (MemberDTO)session.getAttribute("login");
-		int memberno = dto.getMemberno();		
-		dto = service.Mypage(memberno);
-		System.out.println(dto);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("mypage", dto);
-		mav.setViewName("Mypage/Myinfo");
-		return mav;
-		
-		
-	}
+	
+	@RequestMapping(value = "/login")
+	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) {
+		MemberDTO dto = service.login(map);
+		if (dto != null) {
+			session.setAttribute("login", dto);
+			return "Main";// main.jsp
+		} else {
+			model.addAttribute("mesg", "아이디 또는 비번이 잘못되었습니다.");
+			return "loginForm";
+		}
 
+	}
+	
+	@RequestMapping(value = "/loginCheck/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:../";
+	}
 
 }

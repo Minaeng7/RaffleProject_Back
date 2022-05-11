@@ -32,15 +32,16 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mapperLocations"><!--mapper설정 -->
 			<list>
-				<value>classpath:com/config/ListMapper.xml</value>
+				<value>classpath:com/config/SpotMapper.xml</value>
 				<value>classpath:com/config/MemberMapper.xml</value>
 				<value>classpath:com/config/RaffleMapper.xml</value>
+				<value>classpath:com/config/SupervisingMapper.xml</value>
 			</list>
 		</property>
 		<property name="typeAliases">
 			<list>
-				<value>com.dto.RListDTO</value>
-				<value>com.dto.SListDTO</value>
+				<value>com.dto.RSpotDTO</value>
+				<value>com.dto.SSpotDTO</value>
 				<value>com.dto.ResellRDTO</value>
 				<value>com.dto.SellRDTO</value>
 				<value>com.dto.MemberDTO</value>
