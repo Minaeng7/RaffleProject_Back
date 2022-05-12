@@ -54,5 +54,15 @@ public class RaffleDAO {
 		template.delete("RaffleMapper.Deletesell_r",memberno);
 		
 	}
+
+	public List<SellRDTO> mainListS() {
+		List<SellRDTO> list = template.selectList("RaffleMapper.mainListS");
+		return list;
+	}
+
+	public List<ResellRDTO> mainListR() {
+		List<ResellRDTO> list = template.selectList("RaffleMapper.mainListR");
+		return list;
+	}
 	
 }

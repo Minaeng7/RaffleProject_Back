@@ -55,4 +55,14 @@ public class RaffleService {
 		
 	}
 
+	public List<SellRDTO> mainListS() {
+		List<SellRDTO> list = dao.mainListS();
+		return list;
+	}
+
+	public List<ResellRDTO> mainListR() {
+		List<ResellRDTO> list = dao.mainListR();
+		return list;
+	}
+
 }
